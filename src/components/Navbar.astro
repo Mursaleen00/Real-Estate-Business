@@ -1,0 +1,48 @@
+---
+// Path Name
+const pathName = Astro.url.pathname;
+const listitems = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About Us",
+    href: "/about",
+  },
+  {
+    name: "Properties",
+    href: "/properties",
+  },
+  {
+    name: "Services",
+    href: "/services",
+  },
+];
+---
+
+<div
+  class="flex items-center px-6 justify-between md:px-10 lg:px-24 gap-x-10 h-[100px] bg-Grey/10"
+>
+  <img src="./../../public/images/Logo.svg" alt="" width="160px" height="48" />
+  <ul class="lg:flex gap-x-8 items-center hidden">
+    {
+      listitems.map((item) => (
+        <a
+          href={item.href}
+          class={`font-medium text-lg ${pathName === item.href ? "border border-Grey/15 py-4 px-6 rounded-xl bg-Grey/08" : "text-Grey/50"}`}
+        >
+          {item.name}
+        </a>
+      ))
+    }
+  </ul>
+  <img
+    class="lg:hidden"
+    src="./../../public/icons/menu.svg"
+    alt=""
+    width="28px"
+    height="28px"
+  />
+  <div class="hidden lg:block">Lorem, ipsum.</div>
+</div>
