@@ -1,0 +1,52 @@
+---
+import FeatureCard from "../components/cards/Feature-Card.astro";
+import HeadingParagraph from "../components/common/Heading-Paragraph.astro";
+import Fram from "../components/Frame.astro";
+import SimpleHero from "../components/hero/Simple-Hero.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Icons
+import Decisions from "./../../public/icons/decisions.svg";
+import Home from "./../../public/icons/home.svg";
+import Money from "./../../public/icons/money.svg";
+import Property from "./../../public/icons/property.svg";
+
+export const features = [
+  {
+    icon: Home,
+    title: "Find Your Dream Home",
+  },
+  {
+    icon: Money,
+    title: "Unlock Property Value",
+  },
+  {
+    icon: Property,
+    title: "Effortless Property Management",
+  },
+  {
+    icon: Decisions,
+    title: "Smart Investments, Informed Decisions",
+  },
+];
+---
+
+<Layout title="Services">
+  <SimpleHero
+    title="Elevate Your Real Estate Experience"
+    description="Welcome to Estatein, where your real estate aspirations meet expert guidance. Explore our comprehensive range of services, each designed to cater to your unique needs and dreams."
+  />
+  <div class="grid grid-cols-2 xl:grid-cols-4 gap-6 border border-Grey/15 p-6">
+    {
+      features.map((feature) => (
+        <FeatureCard icon={feature.icon} title={feature.title} />
+      ))
+    }
+  </div>
+  <Fram className="py-16">
+    <HeadingParagraph
+      title="Unlock Property Value"
+      description="Selling your property should be a rewarding experience, and at Estatein, we make sure it is. Our Property Selling Service is designed to maximize the value of your property, ensuring you get the best deal possible. Explore the categories below to see how we can help you at every step of your selling journey"
+    />
+  </Fram>
+</Layout>

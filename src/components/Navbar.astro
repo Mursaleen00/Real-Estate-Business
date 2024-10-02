@@ -1,4 +1,6 @@
 ---
+import Button from "./Button.astro";
+
 // Path Name
 const pathName = Astro.url.pathname;
 const listitems = [
@@ -44,5 +46,10 @@ const listitems = [
     width="28px"
     height="28px"
   />
-  <div class="hidden lg:block">Lorem, ipsum.</div>
+
+  <Button
+    text="Contact Us"
+    className="hidden lg:block !bg-Grey/08"
+    link="/contact"
+  />
 </div>

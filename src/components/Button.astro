@@ -1,0 +1,16 @@
+---
+interface Props {
+  text: string;
+  isPurple?: boolean;
+  className?: string;
+  link?: string;
+}
+
+const { text, isPurple, className, link } = Astro.props;
+---
+
+<button
+  class={`${isPurple ? "bg-Purple/60" : "bg-Grey/10 border border-Grey/15"} rounded-xl px-6 py-4 text-white font-medium md:text-lg text-sm ${className}`}
+>
+  {link ? <a href={link}>{text}</a> : text}
+</button>

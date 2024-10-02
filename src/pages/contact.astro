@@ -1,0 +1,52 @@
+---
+import Fram from "../components/Frame.astro";
+import SimpleHero from "../components/hero/Simple-Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import FeatureCard from "../components/cards/Feature-Card.astro";
+
+// Icons
+import Social from "./../../public/icons/social.svg";
+import Email from "./../../public/icons/email.svg";
+import Phone from "./../../public/icons/phone.svg";
+import Location from "./../../public/icons/location.svg";
+import HeadingParagraph from "../components/common/Heading-Paragraph.astro";
+
+export const features = [
+  {
+    icon: Email,
+    title: "info@estatein.com",
+  },
+  {
+    icon: Phone,
+    title: "+1 (123) 456-7890",
+  },
+  {
+    icon: Location,
+    title: "Main Headquarters",
+  },
+  {
+    icon: Social,
+    title: "Instagram, LinkedIn, Facebook",
+  },
+];
+---
+
+<Layout title="Contact Us">
+  <SimpleHero
+    title="Get in Touch with Estatein"
+    description="Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have. Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation."
+  />
+  <div class="grid grid-cols-2 xl:grid-cols-4 gap-6 border border-Grey/15 p-6">
+    {
+      features.map((feature) => (
+        <FeatureCard icon={feature.icon} title={feature.title} />
+      ))
+    }
+  </div>
+  <Fram className="py-16">
+    <HeadingParagraph
+      title="Let's Connect"
+      description="We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein. Whether you're a prospective client, partner, or simply curious about our services, we're here to answer your questions and provide the assistance you need."
+    />
+  </Fram>
+</Layout>

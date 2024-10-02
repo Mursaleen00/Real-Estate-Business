@@ -29,6 +29,9 @@ export default {
 				'Purple/95': "#EDE7FE",
 				'Purple/97': "#F4F0FE",
 				'Purple/99': "#FBFAFF",
+			},
+			backgroundImage: {
+				'hero-gradient': "linear-gradient(95.93deg, #262626 -26.82%, rgba(38, 38, 38, 0) 40.46%);",
 			}
 		},
 	},

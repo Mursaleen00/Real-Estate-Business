@@ -1,7 +1,50 @@
 ---
+import FeatureCard from "../components/cards/Feature-Card.astro";
+import Fram from "../components/Frame.astro";
+import HomeHero from "../components/hero/Home-Hero.astro";
 import Layout from "../layouts/Layout.astro";
+
+// Icons
+import Decisions from "./../../public/icons/decisions.svg";
+import Home from "./../../public/icons/home.svg";
+import Money from "./../../public/icons/money.svg";
+import Property from "./../../public/icons/property.svg";
+
+export const features = [
+  {
+    icon: Home,
+    title: "Find Your Dream Home",
+  },
+  {
+    icon: Money,
+    title: "Unlock Property Value",
+  },
+  {
+    icon: Property,
+    title: "Effortless Property Management",
+  },
+  {
+    icon: Decisions,
+    title: "Smart Investments, Informed Decisions",
+  },
+];
 ---
 
 <Layout title="Welcome to Astro.">
-  <h1 class="">Welcome to Astro.</h1>
+  <!-- Hero -->
+  <HomeHero />
+  <!-- Features -->
+  <div class="grid grid-cols-2 xl:grid-cols-4 gap-6 border border-Grey/15 p-6">
+    {
+      features.map((feature) => (
+        <FeatureCard icon={feature.icon} title={feature.title} />
+      ))
+    }
+  </div>
+  <Fram>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia impedit
+    accusamus temporibus beatae voluptatem exercitationem illo adipisci minus
+    hic corporis, dolor tenetur quae, ducimus suscipit quam voluptas, earum
+    voluptate eaque?
+  </Fram>
 </Layout>

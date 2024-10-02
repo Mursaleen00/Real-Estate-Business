@@ -1,0 +1,20 @@
+---
+import Paragraph from "../common/Paragraph.astro";
+import Fram from "../Frame.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<Fram
+  className="bg-hero-gradient min-h-[390px] flex flex-col justify-center   border-Grey/10"
+>
+  <h1 class="xl:text-5xl md:text-4xl text-3xl font-semibold text-white">
+    {title}
+  </h1>
+  <Paragraph text={description} />
+</Fram>

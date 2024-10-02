@@ -1,0 +1,23 @@
+---
+import Button from "../Button.astro";
+import Paragraph from "../common/Paragraph.astro";
+import Fram from "../Frame.astro";
+---
+
+<Fram
+  className={"!grid md:grid-cols-3 !py-[100px] relative items-center gap-x-10 border-y border-Grey/15 bg-Grey/10"}
+>
+  <div class="md:col-span-2 flex flex-col gap-y-2.5">
+    <h1 class="font-semibold lg:text-4xl xl:text-5xl text-3xl">
+      Start Your Real Estate Journey Today
+    </h1>
+    <Paragraph
+      text="Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance."
+    />
+  </div>
+  <Button
+    text="Explore Properties"
+    isPurple
+    className="md:!w-fit md:justify-self-end"
+  />
+</Fram>

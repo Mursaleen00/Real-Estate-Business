@@ -1,0 +1,64 @@
+---
+import Button from "../Button.astro";
+import HeroCard from "../cards/Hero-Card.astro";
+import Fram from "../Frame.astro";
+
+const cardData = [
+  { count: "200", title: "Happy Customers" },
+  { count: "10k", title: "Properties For Clients" },
+  { count: "16", title: "Years of Experience" },
+];
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 min-h-[814px] gap-y-10 h-full">
+  <!-- Section 1 -->
+  <Fram
+    className="order-last lg:order-first !gap-y-10 lg:!gap-y-12 xl:!gap-y-16 justify-center relative"
+  >
+    <!-- Heading Secton -->
+    <div class="flex flex-col gap-6">
+      <h1 class="text-white font-semibold xl:text-6xl lg:text-5xl text-3xl">
+        Discover Your Dream Property with Estatein
+      </h1>
+      <p class="text-Grey/60 lx:text-lg lg:text-base text-sm font-medium">
+        Your journey to finding the perfect property begins here. Explore our
+        listings to find the home that matches your dreams.
+      </p>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="flex flex-col lg:flex-row gap-4 items-start">
+      <Button text="Laern More" className="!bg-Grey/15 !w-full md:!w-fit" />
+      <Button text="Browse Properties" isPurple className="!w-full md:!w-fit" />
+    </div>
+
+    <!-- Cards  Section -->
+    <div class="grid grid-cols-2 xl:grid-cols-3 gap-4">
+      {
+        cardData.map((card, index) => (
+          <HeroCard
+            count={card.count}
+            title={card.title}
+            className={`${index == 2 && "col-span-2 xl:col-span-1"}`}
+          />
+        ))
+      }
+    </div>
+
+    <img
+      class="absolute -top-24 lg:top-20 lg:-right-20 lg:size-[160px] size-[117px]"
+      src="./../../../public/images/drem property.png"
+      alt=""
+    />
+  </Fram>
+
+  <!-- Section 2 -->
+  <div class="flex justify-end bg-Grey/10">
+    <img
+      src="./../../../public/images/home-hero.png"
+      alt=""
+      width="920px"
+      height="814px"
+    />
+  </div>
+</div>
