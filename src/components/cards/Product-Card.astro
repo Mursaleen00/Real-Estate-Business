@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import Paragraph from "../common/Paragraph.astro";
+import Button from "../Button.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  price: number;
+  image: ImageMetadata;
+  bathrooms: number;
+  bedrooms: number;
+  view: string;
+}
+
+const { title, description, price, image, bathrooms, bedrooms, view }: Props =
+  Astro.props;
+console.log(price, bathrooms, bedrooms, view);
+---
+
+<div
+  class="border border-Grey/15 rounded-xl p-4 md:p-6 xl:p-8 2xl:p-10 flex flex-col gap-6"
+>
+  <Image src={image} alt={title} width={550} height={418} class="rounded-lg" />
+  <h1 class="text-lg md:text-xl xl:text-2xl font-semibold">{title}</h1>
+  <Paragraph text={description} className="line-clamp-2" />
+
+  <div class="flex justify-between items-center">
+    <Button
+      text="View Property Details"
+      isPurple
+      className="!w-full sm:!w-fit"
+    />
+  </div>
+</div>

@@ -1,7 +1,10 @@
 ---
+import Button from "../components/Button.astro";
 import FeatureCard from "../components/cards/Feature-Card.astro";
+import HeadingParagraph from "../components/common/Heading-Paragraph.astro";
 import Fram from "../components/Frame.astro";
 import HomeHero from "../components/hero/Home-Hero.astro";
+import ProductCard from "../components/cards/Product-Card.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Icons
@@ -9,6 +12,7 @@ import Decisions from "./../../public/icons/decisions.svg";
 import Home from "./../../public/icons/home.svg";
 import Money from "./../../public/icons/money.svg";
 import Property from "./../../public/icons/property.svg";
+import { products } from "../constant/products";
 
 export const features = [
   {
@@ -33,6 +37,7 @@ export const features = [
 <Layout title="Welcome to Astro.">
   <!-- Hero -->
   <HomeHero />
+
   <!-- Features -->
   <div class="grid grid-cols-2 xl:grid-cols-4 gap-6 border border-Grey/15 p-6">
     {
@@ -41,10 +46,37 @@ export const features = [
       ))
     }
   </div>
-  <Fram>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia impedit
-    accusamus temporibus beatae voluptatem exercitationem illo adipisci minus
-    hic corporis, dolor tenetur quae, ducimus suscipit quam voluptas, earum
-    voluptate eaque?
-  </Fram>
+
+  <Fram className="py-20">
+    <div class="flex flex-col gap-4">
+      <div class="grid sm:grid-cols-3 gap-4 items-end w-full">
+        <div class="sm:col-span-2">
+          <HeadingParagraph
+            description="Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click 'View Details' for more information."
+            title="Featured Properties"
+          />
+        </div>
+
+        <div class="col-span-1 flex justify-end w-full">
+          <Button text="View All Properties" className="!w-full sm:!w-fit" />
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          products.map((product) => (
+            <ProductCard
+              title={product.title}
+              description={product.description}
+              price={product.price}
+              image={product.image}
+              bathrooms={product.bathrooms}
+              bedrooms={product.bedrooms}
+              view={product.view}
+            />
+          ))
+        }
+      </div>
+    </div></Fram
+  >
 </Layout>

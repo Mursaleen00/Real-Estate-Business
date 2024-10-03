@@ -1,9 +1,12 @@
 ---
 interface Props {
   text: string;
+  className?: string;
 }
 
-const { text } = Astro.props;
+const { text, className } = Astro.props;
 ---
 
-<p class="xl:text-lg text-Grey/60 md:text-base text-sm">{text}</p>
+<p class={`xl:text-lg text-Grey/60 md:text-base text-sm ${className}`}>
+  {text}
+</p>
