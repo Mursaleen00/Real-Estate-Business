@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
+import Logo from '../../public/images/Logo.svg'
+import Menu from '../../public/icons/menu.svg'
+
 
 // Path Name
 const pathName = Astro.url.pathname;
@@ -26,7 +30,7 @@ const listitems = [
 <div
   class="flex items-center px-6 justify-between md:px-10 lg:px-24 gap-x-10 h-[100px] bg-Grey/10"
 >
-  <img src="./../../public/images/Logo.svg" alt="" width="160px" height="48" />
+  <Image src={Logo} alt="" width={160} height={48} />
   <ul class="lg:flex gap-x-8 items-center hidden">
     {
       listitems.map((item) => (
@@ -39,12 +43,12 @@ const listitems = [
       ))
     }
   </ul>
-  <img
+  <Image
     class="lg:hidden"
-    src="./../../public/icons/menu.svg"
+    src={Menu}
     alt=""
-    width="28px"
-    height="28px"
+    width={28}
+    height={28}
   />
 
   <Button

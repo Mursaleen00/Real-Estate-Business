@@ -1,7 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../Button.astro";
 import HeroCard from "../cards/Hero-Card.astro";
 import Fram from "../Frame.astro";
+import HeroImage from "./../../../public/images/drem property.png"
+import Hero from "./../../../public/images/home-hero.png"
+
+
 
 const cardData = [
   { count: "200", title: "Happy Customers" },
@@ -45,20 +50,22 @@ const cardData = [
       }
     </div>
 
-    <img
+    <Image
       class="absolute -top-24 lg:top-20 lg:-right-20 lg:size-[160px] size-[117px]"
-      src="./../../../public/images/drem property.png"
+      src={HeroImage}
       alt=""
+      width={160}
+      height={160}
     />
   </Fram>
 
   <!-- Section 2 -->
   <div class="flex justify-end bg-Grey/10">
-    <img
-      src="./../../../public/images/home-hero.png"
+    <Image
+      src={Hero}
       alt=""
-      width="920px"
-      height="814px"
+      width={920}
+      height={814}
     />
   </div>
 </div>

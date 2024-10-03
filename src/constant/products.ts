@@ -9,7 +9,7 @@ export const products = [
   {
     title: "Seaside Serenity Villa",
     description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills... Read More ",
     price: 100000,
     image: second,
     bathrooms: 2,
@@ -19,7 +19,7 @@ export const products = [
   {
     title: "Metropolitan Haven",
     description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills... Read More ",
     price: 100000,
     image: third,
     bathrooms: 2,
@@ -29,7 +29,7 @@ export const products = [
   {
     title: "Rustic Retreat Cottage",
     description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills... Read More ",
     price: 100000,
     image: fourth,
     bathrooms: 2,
@@ -39,7 +39,7 @@ export const products = [
   {
     title: "Metropolitan Haven",
     description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills... Read More ",
     price: 100000,
     image: fifth,
     bathrooms: 2,
@@ -49,7 +49,7 @@ export const products = [
   {
     title: "Seaside Serenity Villa",
     description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills... Read More ",
     price: 100000,
     image: sixth,
     bathrooms: 2,
@@ -59,7 +59,7 @@ export const products = [
   {
     title: "Rustic Retreat Cottage",
     description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills... Read More ",
     price: 100000,
     image: seventh,
     bathrooms: 2,
