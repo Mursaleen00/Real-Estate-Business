@@ -1,0 +1,19 @@
+---
+interface Props {
+    label?: string;
+    placeholder?: string;
+    type: string;
+    name?: string;
+    value?: string;
+    onChange?: (event: Event) => void;
+    error?: string;
+    touched?: boolean;
+}
+
+const {label, placeholder, type, name, value, onChange } = Astro.props;
+---
+
+<label for={name} class="flex flex-col gap-y-2">
+    <span class="md:text-base text-sm font-semibold">{label}</span>
+    <input type={type as astroHTML.JSX.InputHTMLAttributes['type']} name={name} value={value} placeholder={placeholder} class="w-full border px-5 py-4 rounded-md border-Grey/15 bg-Grey/10 outline-none " />
+</label>

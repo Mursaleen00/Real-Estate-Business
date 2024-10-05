@@ -48,14 +48,15 @@ export const features = [
   </div>
 
   <Fram className="py-20">
-    <div class="flex flex-col gap-4">
-      <div class="grid sm:grid-cols-3 gap-4 items-end w-full">
-        <div class="sm:col-span-2">
-          <HeadingParagraph
+    <div class="flex flex-col gap-y-20">
+      <div class="flex flex-col gap-10">
+        <div class="grid sm:grid-cols-3 gap-4 items-end w-full">
+          <div class="sm:col-span-2">
+           <HeadingParagraph
             description="Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click 'View Details' for more information."
             title="Featured Properties"
-          />
-        </div>
+           />
+          </div>
 
         <div class="col-span-1 flex justify-end w-full">
           <Button text="View All Properties" className="!w-full sm:!w-fit" />
@@ -77,6 +78,33 @@ export const features = [
           ))
         }
       </div>
-    </div></Fram
-  >
+    </div>
+    
+    
+      <div class="grid sm:grid-cols-3 gap-4 items-end w-full">
+        <div class="sm:col-span-2">
+          <HeadingParagraph
+            description="Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs."
+            title="What Our Clients Say"
+            />
+        </div>
+        <div class="col-span-1 flex justify-end w-full">
+          <Button text="View All Testimonials" className="!w-full sm:!w-fit" />
+        </div>
+      </div>
+
+      
+      <div class="grid sm:grid-cols-3 gap-4 items-end w-full">
+      <div class="sm:col-span-2">
+        <HeadingParagraph
+          description="Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way."
+          title="Frequently Asked Questions"
+        />
+      </div>
+      <div class="col-span-1 flex justify-end w-full">
+        <Button text="View All FAQ’s" className="!w-full sm:!w-fit" />
+      </div>
+    </div>
+  </div>
+    </Fram>
 </Layout>
