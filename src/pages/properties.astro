@@ -1,10 +1,89 @@
 ---
+import Button from "../components/Button.astro";
 import ProductCard from "../components/cards/Product-Card.astro";
 import HeadingParagraph from "../components/common/Heading-Paragraph.astro";
 import Fram from "../components/Frame.astro";
 import SimpleHero from "../components/hero/Simple-Hero.astro";
+import Input from "../components/Inputs/Input.astro";
 import { products } from "../constant/products";
 import Layout from "../layouts/Layout.astro";
+import { atom } from "nanostores";
+
+const methoud = atom<"phone" | "email">("phone");
+console.log("🚀 ~ methoud:", methoud.get());
+
+const changeMethoud = (value: "phone" | "email") => {
+  methoud.set(value);
+};
+
+// let methoud: ;
+// console.log("🚀 ~ methoud:", methoud.get());
+
+const propertyForm = [
+  {
+    label: "First Name",
+    placehloder: "Enter First Name",
+    name: "firstName",
+    type: "text",
+    value: "",
+  },
+  {
+    label: "Last Name",
+    placehloder: "Enter Last Name",
+    name: "lastName",
+    type: "text",
+    value: "",
+  },
+  {
+    label: "Email",
+    placehloder: "Enter Email",
+    name: "email",
+    type: "email",
+    value: "",
+  },
+  {
+    label: "Phone",
+    placehloder: "Enter Phone Number",
+    name: "phone",
+    type: "number",
+    value: "",
+  },
+  {
+    label: "Preferred Location",
+    placehloder: "Enter Location",
+    name: "location",
+    type: "text",
+    value: "",
+  },
+  {
+    label: "Property Type",
+    placehloder: "Enter Property Type",
+    name: "propertyType",
+    type: "text",
+    value: "",
+  },
+  {
+    label: "No. of Bathrooms",
+    placehloder: "Enter No. of Bathrooms",
+    name: "bathrooms",
+    type: "number",
+    value: "",
+  },
+  {
+    label: "No. of Bedrooms",
+    placehloder: "Enter No. of Bedrooms",
+    name: "bedrooms",
+    type: "number",
+    value: "",
+  },
+  {
+    label: "Budget",
+    placehloder: "Enter Budget",
+    name: "budget",
+    type: "number",
+    value: "",
+  },
+];
 ---
 
 <Layout title="Properties">
@@ -16,32 +95,109 @@ import Layout from "../layouts/Layout.astro";
   <Fram className="py-16 space-y-20">
     <div class="flex flex-col gap-y-6">
       <HeadingParagraph
-      title="Discover a World of Possibilities"
-      description="Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey to finding your perfect home begins here."
+        title="Discover a World of Possibilities"
+        description="Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey to finding your perfect home begins here."
       />
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
           products.map((product) => (
             <ProductCard
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            image={product.image}
-            bathrooms={product.bathrooms}
-            bedrooms={product.bedrooms}
-            view={product.view}
-          />
-        ))
+              title={product.title}
+              description={product.description}
+              price={product.price}
+              image={product.image}
+              bathrooms={product.bathrooms}
+              bedrooms={product.bedrooms}
+              view={product.view}
+            />
+          ))
         }
       </div>
-  </div>
+    </div>
 
-  <div class="flex flex-col gap-y-6">
+    <div class="flex flex-col gap-y-6">
       <HeadingParagraph
-      title="Let's Make it Happen"
-      description="Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together."
+        title="Let's Make it Happen"
+        description="Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together."
       />
-  </div>
+
+      <div
+        class="grid sm:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-6 border border-Grey/15 xl:p-10 p-4 md:p-7 rounded-xl"
+      >
+        {
+          propertyForm.map((item) => (
+            <Input
+              {...item}
+              className={`${item.name === "budget" ? "col-span-1 sm:col-span-2" : ""}`}
+            />
+          ))
+        }
+        <div class="col-span-1 sm:col-span-2 flex w-full flex-col gap-y-2">
+          <span class="md:text-base text-sm font-semibold"
+            >Preferred Contact Method</span
+          >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+            <div
+              class="!w-full flex items-center justify-between pr-3 gap-2 bg-Grey/10 border rounded-md border-Grey/15"
+            >
+              <Input
+                type="text"
+                placeholder="Enter Your Number"
+                inputClass="!w-full !border-none"
+                disabled={methoud.get() === "email"}
+              />
+              <input
+                type="radio"
+                name="methoud"
+                class="accent-Purple/60 size-4"
+                value="phone"
+                onclick={'changeMethoud("phone")'}
+                checked={methoud.get() === "phone"}
+              />
+            </div>
+            <div
+              class="!w-full flex items-center justify-between pr-3 gap-2 bg-Grey/10 border rounded-md border-Grey/15"
+            >
+              <Input
+                type="text"
+                placeholder="Enter Your Email"
+                inputClass="!w-full !border-none"
+                disabled={methoud.get() === "phone"}
+              />
+              <input
+                type="radio"
+                name="methoud"
+                class="accent-Purple/60 size-4"
+                onclick={"changeMethoud('phone')"}
+                value="email"
+                checked={methoud.get() === "email"}
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-4 col-span-1 sm:col-span-2">
+          <textarea
+            class="border border-Grey/15 rounded-xl p-4 bg-Grey/10 lg:col-span-4 col-span-1 sm:col-span-2 w-full outline-none ring-0"
+            rows="7"
+            placeholder="Your Message"></textarea>
+          <div
+            class="lg:col-span-4 col-span-1 sm:col-span-2 flex justify-between items-center"
+          >
+            <div class="flex items-center gap-x-2">
+              <input
+                type="checkbox"
+                id="checkbox"
+                class="w-4 h-4 accent-Purple/60"
+              />
+              <label for="checkbox" class="text-sm"
+                >I agree to the <span class="">Terms & Conditions</span></label
+              >
+            </div>
+            <Button text="Send Your Message" isPurple />
+          </div>
+        </div>
+      </div>
+    </div>
   </Fram>
 </Layout>

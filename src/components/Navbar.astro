@@ -1,9 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
-import Logo from '../../public/images/Logo.svg'
-import Menu from '../../public/icons/menu.svg'
-
+import Logo from "../../public/images/Logo.svg";
+import Menu from "../../public/icons/menu.svg";
 
 // Path Name
 const pathName = Astro.url.pathname;
@@ -43,13 +42,7 @@ const listitems = [
       ))
     }
   </ul>
-  <Image
-    class="lg:hidden"
-    src={Menu}
-    alt=""
-    width={28}
-    height={28}
-  />
+  <Image class="lg:hidden" src={Menu} alt="" width={28} height={28} />
 
   <Button
     text="Contact Us"

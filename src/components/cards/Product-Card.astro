@@ -21,18 +21,24 @@ console.log(price, bathrooms, bedrooms, view);
 <div
   class="border border-Grey/15 rounded-xl p-4 md:p-6 xl:p-8 2xl:p-10 flex flex-col gap-6"
 >
-  <Image src={image} alt={title} width={550} height={418} class="rounded-lg" loading='lazy'/>
+  <Image
+    src={image}
+    alt={title}
+    width={550}
+    height={418}
+    class="rounded-lg"
+    loading="lazy"
+  />
   <h1 class="text-lg md:text-xl xl:text-2xl font-semibold">{title}</h1>
   <Paragraph text={description} className="line-clamp-2" />
 
-  <div class="flex justify-between lg:justify-start 2xl:justify-between gap-y-2 lg:flex-col 2xl:flex-row">
+  <div
+    class="flex justify-between lg:justify-start 2xl:justify-between gap-y-2 lg:flex-col 2xl:flex-row"
+  >
     <div>
-      <Paragraph text="Price"/>
-      <p class="font-semibold text-lg md:text-xl xl:text-2xl">${price}</p> 
+      <Paragraph text="Price" />
+      <p class="font-semibold text-lg md:text-xl xl:text-2xl">${price}</p>
     </div>
-    <Button
-      text="View Property Details"
-      isPurple
-    />
+    <Button text="View Property Details" isPurple />
   </div>
 </div>

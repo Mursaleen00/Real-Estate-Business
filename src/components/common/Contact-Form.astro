@@ -4,18 +4,30 @@ import Button from "../Button.astro";
 import Input from "../Inputs/Input.astro";
 ---
 
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 border border-Grey/15 xl:p-10 p-4 md:p-7 rounded-xl">
-    {
-      contactData.map(item =>(
-        <Input label={item.label} placeholder={item.placeholder} type={item.type} name={item.name} />
-      ))
-    }
-    <textarea class="border border-Grey/15 rounded-xl p-4 bg-Grey/10 col-span-3 w-full outline-none ring-0" rows="7" placeholder="Your Message"></textarea>
+<div
+  class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 border border-Grey/15 xl:p-10 p-4 md:p-7 rounded-xl"
+>
+  {
+    contactData.map((item) => (
+      <Input
+        label={item.label}
+        placeholder={item.placeholder}
+        type={item.type}
+        name={item.name}
+      />
+    ))
+  }
+  <textarea
+    class="border border-Grey/15 rounded-xl p-4 bg-Grey/10 col-span-3 w-full outline-none ring-0"
+    rows="7"
+    placeholder="Your Message"></textarea>
   <div class="col-span-3 flex justify-between items-center">
     <div class="flex items-center gap-x-2">
       <input type="checkbox" id="checkbox" class="w-4 h-4 accent-Grey/15" />
-      <label for="checkbox" class="text-sm">I agree to the <span class="">Terms & Conditions</span></label>
+      <label for="checkbox" class="text-sm"
+        >I agree to the <span class="">Terms & Conditions</span></label
+      >
     </div>
-    <Button text="Send Your Message" isPurple/>
+    <Button text="Send Your Message" isPurple />
   </div>
-  </div>
+</div>
